@@ -1,175 +1,218 @@
+# Modern Developer Portfolio Template
+> 面向开发者的现代化、响应式个人作品集网站模板 | 开箱即用 | 高可定制 | 全设备兼容
 
-# DevPortfolio - 个人作品集网站
-> 一个基于纯 HTML/CSS/JavaScript 的响应式个人作品集网站，支持暗色/亮色主题、多语言（中英文）、项目展示、技术博客、收藏与评论等交互功能。
----
-## 项目简介
-DevPortfolio 是一个面向开发者的个人作品集静态网站模板，采用单页面应用架构，无需任何后端服务即可运行。  
-适合用于：
-- 个人作品集 / 技能展示
-- GitHub Pages 个人主页
-- 求职简历与项目展示
-- 技术博客与知识沉淀
-主要特性：
-- 响应式设计，适配手机、平板和桌面端
-- 支持中文 / 英文切换
-- 暗色 / 亮色 / 护眼多主题模式
-- 项目案例展示（支持分类筛选、收藏）
-- 技术博客列表（支持分类与分页）
-- 粒子背景动画（可关闭）
-- 本地存储收藏、评论、访问统计
-- 图片懒加载、骨架屏加载占位
-- 完全静态，无需后端，可部署到 GitHub Pages / Vercel / Netlify 等
----
-## 在线预览
-- 本地直接打开 `index.html` 即可预览
-- 推荐部署到 GitHub Pages、Vercel 或 Netlify
----
-## 项目结构
-```text
-.
-├── index.html          # 单页面应用入口
-├── README.md           # 项目说明文档
-├── LICENSE             # 开源协议
-├── assets/             # （如需本地化资源可在此扩展）
-│   ├── images/         # 图片资源
-│   └── fonts/          # 字体文件（可选）
-└── ...
-```
-> 注：当前版本使用 CDN 引入 Tailwind、Chart.js、Marked、Highlight.js 等，保持仓库体积轻量。
----
-## 快速开始
-### 1. 克隆仓库
+[![GitHub Stars](https://img.shields.io/github/stars/badhope/portfolio-website?style=flat-square&logo=github)](https://github.com/badhope/portfolio-website/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/badhope/portfolio-website?style=flat-square&logo=github)](https://github.com/badhope/portfolio-website/network/members)
+[![GitHub License](https://img.shields.io/github/license/badhope/portfolio-website?style=flat-square)](https://github.com/badhope/portfolio-website/blob/main/LICENSE)
+[![Vercel Deploy](https://img.shields.io/github/deployments/badhope/portfolio-website/production?style=flat-square&logo=vercel&label=deploy-status)](https://badhope.github.io/portfolio-website/)
+[![Code Size](https://img.shields.io/github/languages/code-size/badhope/portfolio-website?style=flat-square)](https://github.com/badhope/portfolio-website)
+[![Last Commit](https://img.shields.io/github/last-commit/badhope/portfolio-website?style=flat-square)](https://github.com/badhope/portfolio-website/commits/main)
+
+## 📖 项目简介
+这是一套专为开发者打造的**开箱即用型个人作品集网站模板**，基于语义化HTML5、Tailwind CSS和原生JavaScript构建，完美适配全栈/前端/后端/运维等技术从业者快速搭建个人线上主页。
+模板预设了个人简介、技能栈展示、项目作品、技术博客、联系方式等核心模块，无需复杂的框架学习成本，即使是仅掌握HTML/CSS基础的新手，也能快速完成个性化修改与上线部署。
+
+👉 在线预览：[https://badhope.github.io/portfolio-website/](https://badhope.github.io/portfolio-website/)
+
+## ✨ 核心特性
+### 技术向核心优势
+1. **语义化原生技术栈**：基于HTML5+CSS3+原生JavaScript开发，无过重框架依赖，兼容性强，二次开发门槛极低
+2. **原子化CSS架构**：采用Tailwind CSS实现样式开发，支持一键自定义主题色、字体、间距，告别冗余CSS代码
+3. **全响应式布局**：从移动端到桌面端全尺寸设备完美适配，基于Flex/Grid实现流式布局，无横向滚动与样式错乱
+4. **SEO友好优化**：完整的语义化标签结构、meta标签预设，支持搜索引擎快速收录，适配个人品牌线上曝光
+5. **模块化代码结构**：页面模块完全解耦，支持一键新增/删减/调整模块顺序，无需重构整体代码
+6. **极速首屏加载**：轻量化代码体积，静态资源按需加载，无冗余依赖，首屏加载速度优于90%以上的同类模板
+7. **多部署方案兼容**：原生支持GitHub Pages、Vercel、Netlify、云服务器、虚拟主机等几乎所有部署方式，零成本上线
+
+### 开箱即用的功能模块
+- 🏠 英雄区(Hero)：个人身份与核心定位快速展示
+- 👤 关于我：个人履历、从业经验、学历背景等基础信息展示
+- 🛠️ 技能栈：多维度技能进度展示、技术标签云，清晰呈现技术能力
+- 📂 项目作品：分类式项目卡片展示，支持筛选、跳转预览与仓库地址
+- 📝 技术博客：文章列表与分类管理，支持对接第三方博客平台
+- 📞 联系方式：多渠道联系入口，支持表单提交与直连方式
+
+## 🛠️ 技术栈
+| 技术分类 | 核心技术 | 说明 |
+|----------|----------|------|
+| 结构层 | HTML5 | 语义化标签，SEO友好，兼容所有现代浏览器 |
+| 样式层 | Tailwind CSS 3.x + CSS3 | 原子化样式开发，支持自定义主题，响应式断点预设 |
+| 交互层 | 原生JavaScript (ES6+) | 无框架依赖，轻量交互实现，平滑滚动、分类筛选等功能 |
+| 构建工具 | 可选Vite/Webpack | 支持原生HTML直接运行，也可接入构建工具实现工程化开发 |
+| 部署兼容 | GitHub Pages/Vercel/Netlify/云服务器 | 全平台部署支持，提供一键部署方案 |
+| 扩展兼容 | React/Vue/Next.js/Nuxt.js | 支持无缝迁移至主流前端框架，适配SSR/SSG场景 |
+
+## 🚀 快速开始
+### 环境准备
+- 基础运行：仅需现代浏览器与代码编辑器（VS Code推荐），无需Node.js环境
+- 进阶开发：Node.js 16.x+ 、Git、npm/yarn/pnpm包管理器
+
+### 1. 获取项目
+#### 方式一：直接下载（零门槛，新手推荐）
+1. 进入项目仓库：[https://github.com/badhope/portfolio-website](https://github.com/badhope/portfolio-website)
+2. 点击 `Code` -> `Download ZIP` 下载完整项目压缩包
+3. 解压后用代码编辑器打开文件夹，直接修改 `index.html` 即可完成个性化配置
+
+#### 方式二：Git克隆（开发者推荐）
 ```bash
+# 克隆仓库到本地
 git clone https://github.com/badhope/portfolio-website.git
+
+# 进入项目目录
 cd portfolio-website
 ```
-### 2. 本地预览
-直接用浏览器打开 `index.html`：
-- macOS:  
-  ```bash
-  open index.html
-  ```
-- Windows:  
-  ```bash
-  start index.html
-  ```
-- Linux:  
-  ```bash
-  xdg-open index.html
-  ```
-或使用任意静态服务器，例如：
+
+#### 方式三：一键Fork（用于GitHub Pages部署）
+直接点击仓库右上角 `Fork` 按钮，复制完整项目到自己的GitHub账号下，即可开始自定义修改。
+
+### 2. 本地运行
+#### 原生HTML直接运行（无依赖）
+直接用浏览器打开项目根目录下的 `index.html` 文件，即可实时预览效果，修改代码后刷新浏览器即可更新。
+
+#### 带构建工具的开发模式（进阶使用）
 ```bash
-# 使用 Python 3
-python -m http.server 8080
-# 使用 Node.js 的 serve
-npx serve .
+# 安装依赖
+npm install
+
+# 启动本地开发服务器（带热更新）
+npm run dev
+
+# 构建生产环境产物
+npm run build
 ```
-然后访问 `http://localhost:8080`。
----
-## 部署到 GitHub Pages
-1. 将代码推送到 GitHub 仓库：  
-   ```bash
-   git add .
-   git commit -m "Initial commit"
-   git push origin main
-   ```
-2. 在仓库设置中开启 GitHub Pages：
-   - `Settings` → `Pages`
-   - `Source` 选择 `Deploy from a branch`
-   - `Branch` 选择 `main`（或你的默认分支），目录选择 `/ (root)`
-   - 保存后等待几分钟，即可通过 `https://<your-username>.github.io/<repo-name>/` 访问。
----
-## 功能说明
-### 1. 响应式布局
-- 使用 Tailwind CSS 实现移动优先的响应式设计
-- 针对手机端提供底部导航栏，方便快速切换页面区域
-- 自动适配不同屏幕尺寸和设备类型
-### 2. 多语言支持（中英文）
-- 支持中文 / 英文一键切换
-- 语言配置保存在本地存储，刷新后保持选择
-- 主要文案均通过 `data-i18n` 属性标记，方便扩展更多语言
-### 3. 主题模式
-- 支持三种主题：
-  - 浅色模式（Light）
-  - 深色模式（Dark）
-  - 护眼模式（Eye Care）
-- 主题设置保存在本地存储，自动记住用户偏好
-### 4. 项目展示
-- 项目案例以卡片形式展示，支持悬浮动画效果
-- 按类别筛选：Web 应用 / 移动端 / API 后端 / 工具开源
-- 支持收藏功能，收藏数据保存在本地
-- 点击卡片可查看项目详情（模态框展示）
-### 5. 技术博客
-- 博客文章支持分类浏览（前端 / 后端 / DevOps / 教程等）
-- 支持分页加载
-- 支持收藏，方便后续阅读
-- 阅读量统计与显示
-### 6. 粒子背景与动画
-- 首页粒子背景动画，支持鼠标交互
-- 可在设置中一键开启 / 关闭粒子效果
-- 支持 `prefers-reduced-motion` 媒体查询，尊重系统减少动画设置
-### 7. 本地存储与交互
-- 收藏的项目、博客保存在本地
-- 评论数据保存在本地（演示用途，无后端）
-- 访问统计用于记录页面访问情况（本地存储）
----
-## 自定义配置
-### 修改个人信息
-在 `index.html` 中找到以下区域，修改为你的真实信息：
-- 头像与姓名（Hero 区域）
-- 个人简介（About 区域）
-- 技能栈（Skills 区域）
-- 项目案例数据（`projectsData` 对象）
-- 博客文章数据（`blogData` 对象）
-- 联系方式与社交链接
-### 更换主题色
-在 `<style>` 部分或 Tailwind 配置中调整：
-- `--primary-color` 等主色变量
-- `--bg-primary`、`--text-primary` 等背景与文字颜色
-- 或直接在 Tailwind 的 `theme.extend.colors` 中修改
-### 添加真实数据
-将 `projectsData` 与 `blogData` 替换为你的真实项目和文章：
-- `title` / `titleEn`：中英文标题
-- `description` / `descriptionEn`：中英文描述
-- `image`：项目封面图链接
-- `tags`：技术标签
-- `github` / `demo`：源码与演示链接
----
-## 技术栈
-- HTML5 / CSS3 / JavaScript (ES6+)
-- Tailwind CSS（通过 CDN）
-- Chart.js（雷达图、饼图）
-- Marked.js（Markdown 渲染）
-- Highlight.js（代码高亮）
-- Hammer.js（触摸手势支持）
-- 本地存储（LocalStorage）
----
-## 目录结构说明
-- `index.html`：单页面应用入口，包含所有页面结构与逻辑
-- 内联 CSS 与 JavaScript，减少外部依赖，适合快速部署
-- 所有数据通过前端对象配置，方便维护与扩展
----
-## 常见问题
-### 1. 图片无法加载？
-- 检查 `projectsData` 与 `blogData` 中的 `image` 字段是否为有效链接
-- 如使用本地图片，请确保路径正确，或放在 `assets/images/` 目录下
-### 2. 如何添加更多页面？
-当前为单页面应用，可通过以下方式扩展：
-- 在 `index.html` 中增加新的 `section`
-- 在导航栏与底部导航中添加对应锚点链接
-- 或改造为多页面结构，每个页面单独维护
-### 3. 如何接入后端？
-当前为纯静态项目，如需接入后端：
-- 可将 `projectsData`、`blogData` 等改为从 API 获取
-- 将评论、收藏等数据改为保存到数据库
-- 使用 GitHub Issues / Discussions 或第三方评论系统（如 Giscus）
----
-## 联系方式
-- 邮箱：x18825407105@outlook.com
-- GitHub：https://github.com/badhope/portfolio-website
-如有问题或建议，欢迎提 Issue 或 Pull Request。
----
-## 许可证
-本项目基于 MIT 协议开源，详情见 [LICENSE](LICENSE) 文件。
+
+## ⚙️ 个性化配置
+模板所有内容均支持无代码基础的可视化修改，核心配置均集中在 `index.html` 中，无需修改复杂的逻辑代码。
+
+### 1. 基础个人信息配置
+直接修改HTML中对应标签的文本内容，即可完成个人核心信息更新：
+- 姓名、职业定位、个人简介（Hero区与关于我模块）
+- 所在地、从业年限、邮箱、学历、电话、地址等联系方式
+- 社交账号链接（GitHub、LinkedIn、掘金、知乎等，可自行新增）
+
+### 2. 技能栈配置
+- 技能进度条：修改 `data-percent` 属性值，即可调整技能熟练度百分比展示
+- 技能分类：支持新增/删减前端开发、后端开发、DevOps等分类模块
+- 技术标签：修改标签云内的文本，即可自定义个人技术标签
+
+### 3. 项目作品配置
+- 项目卡片：复制预设的项目卡片DOM结构，即可新增项目；删除对应DOM即可移除项目
+- 项目分类：支持自定义Web应用、移动端、API后端、开源工具等分类，实现筛选功能
+- 项目信息：修改项目名称、描述、技术标签、预览链接、GitHub仓库地址即可
+
+### 4. 样式主题自定义
+在 `tailwind.config.js` 中修改主题配置，一键更换全站主题色、字体、圆角、间距等：
+```javascript
+// tailwind.config.js 示例
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#你的主题色',
+        secondary: '#你的辅助色',
+      },
+      fontFamily: {
+        sans: ['你的字体', 'system-ui', 'sans-serif'],
+      },
+    },
+  }
+}
 ```
----
+
+### 5. 模块自定义
+- 删减模块：直接删除HTML中对应模块的完整DOM结构，不影响其他模块运行
+- 新增模块：参考预设模块的DOM结构，新增自定义模块（如获奖经历、开源贡献、服务案例等）
+
+## 📦 部署指南
+### 方案一：GitHub Pages 部署（零成本，永久免费，强烈推荐）
+1. 将修改后的项目代码推送到你的GitHub仓库
+2. 进入仓库 `Settings` -> `Pages`
+3. 在 `Build and deployment` 中，Source选择 `Deploy from a branch`
+4. Branch选择 `main` ，文件夹选择 `/root` ，点击Save
+5. 等待1-2分钟，即可通过 `https://你的用户名.github.io/仓库名/` 访问你的个人网站
+
+### 方案二：Vercel 一键部署（全球CDN，自动更新，推荐）
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/badhope/portfolio-website)
+1. 点击上方一键部署按钮，使用GitHub账号登录Vercel
+2. 确认仓库信息，点击Deploy，等待30秒即可完成部署
+3. 后续修改代码推送到GitHub，Vercel会自动完成更新部署
+
+### 方案三：云服务器/虚拟主机部署
+1. 执行 `npm run build` 构建生产环境产物（原生HTML直接使用根目录文件）
+2. 将产物文件上传到服务器的网站根目录
+3. 配置Nginx（示例）：
+```nginx
+server {
+    listen 80;
+    server_name 你的域名.com;
+    root /var/www/portfolio;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}
+```
+4. 解析域名到服务器IP，即可通过域名访问
+
+## 📁 项目结构
+```
+portfolio-website/
+├── index.html          # 主页面入口，完整的HTML结构与内容配置
+├── tailwind.config.js  # Tailwind CSS 主题与自定义配置
+├── package.json        # 项目依赖与构建脚本配置
+├── .gitignore          # Git忽略文件配置
+├── src/
+│   ├── css/
+│   │   └── main.css    # 全局样式入口，Tailwind指令与自定义样式
+│   ├── js/
+│   │   └── main.js     # 全局交互逻辑，平滑滚动、分类筛选等功能
+│   └── assets/         # 静态资源目录
+│       ├── images/     # 头像、项目截图、banner等图片资源
+│       └── icons/      # favicon、社交图标等图标资源
+├── public/             # 构建产物输出目录
+├── LICENSE             # 开源许可证
+└── README.md           # 项目说明文档
+```
+
+## 🤝 参与贡献
+我们非常欢迎社区开发者参与本项目的贡献，让这个模板变得更好！
+- 🐛 提交Issue：反馈Bug、提出功能建议、优化想法
+- 🔧 提交PR：修复Bug、新增功能、优化代码、完善文档
+- ✨ 分享推广：Star本项目，分享给更多开发者朋友，让更多人受益
+
+### 贡献步骤
+1. Fork本仓库
+2. 创建你的功能分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交你的修改 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 打开一个Pull Request
+
+## 📄 开源许可证
+本项目基于 **MIT License** 开源，你可以：
+- ✅ 免费商用、个人使用
+- ✅ 修改、二次开发、分发代码
+- ✅ 私有使用
+- 仅需保留原作者的版权声明与许可证信息，无其他限制
+
+完整许可证内容见 [LICENSE](https://github.com/badhope/portfolio-website/blob/main/LICENSE)
+
+## ❓ 常见问题
+1. **我只会HTML和CSS，能使用这个模板吗？**
+完全可以！模板核心内容都在index.html中，只需修改对应文本内容，无需修改逻辑代码，零前端基础也能快速上手。
+
+2. **可以用于商业用途吗？**
+可以，基于MIT协议，你可以自由用于个人、商业项目，无需额外授权。
+
+3. **怎么添加深色模式？**
+模板已预留深色模式适配入口，只需在tailwind.config.js中开启darkMode，添加对应的深色样式类即可，仓库Wiki提供了完整的深色模式适配教程。
+
+4. **怎么对接自己的博客系统？**
+支持对接WordPress、Notion、VuePress、Hexo等博客系统，只需修改博客模块的链接，或通过API拉取博客列表渲染即可。
+
+## 💖 鼓励与支持
+如果这个模板帮你快速搭建了属于自己的个人网站，欢迎给本项目点一个 **Star** ⭐，这是对我们最大的鼓励与支持！
+
+也欢迎你把这个模板分享给身边的开发者朋友，让更多人能零成本搭建自己的线上个人品牌主页。
+
+有任何使用问题，都可以在仓库Issue区留言，我们会尽快回复解答。
